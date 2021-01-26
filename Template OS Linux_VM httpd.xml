@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>3.2</version>
+    <date>2020-02-21T14:42:49Z</date>
+    <groups>
+        <group>
+            <name>Template - App</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template OS Linux_VM httpd</template>
+            <name>Template OS Linux_VM httpd</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>Template - App</name>
+                </group>
+            </groups>
+            <applications/>
+            <items>
+                <item>
+                    <name>Процесс http</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>proc.num[httpd]</key>
+                    <delay>60</delay>
+                    <history>30</history>
+                    <trends>30</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications/>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+            </items>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates/>
+            <screens/>
+        </template>
+    </templates>
+    <triggers>
+        <trigger>
+            <expression>{Template OS Linux_VM httpd:proc.num[httpd].max(#5,0)}=0</expression>
+            <recovery_mode>1</recovery_mode>
+            <recovery_expression>{Template OS Linux_VM httpd:proc.num[httpd].max(#5,0)}&gt;0</recovery_expression>
+            <name>Процесс httpd не запущен</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>5</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+    </triggers>
+</zabbix_export>
