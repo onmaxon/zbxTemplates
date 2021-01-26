@@ -1,1 +1,2 @@
-ipmitool -I lanplus -H {{ ip_address i}} -U admin -P 12345678 sensor
+# zbxTemplates
+Templates for Zbx 3.2
